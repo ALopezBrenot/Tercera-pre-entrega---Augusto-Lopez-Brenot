@@ -25,8 +25,7 @@ class Profesional(models.Model):
 
 class TestCovid(models.Model):
     DNI_pac = models.IntegerField()
-    resultado = models.BooleanField()
-    estado = models.CharField(max_length=20)
+    estado = models.BooleanField()
+    resultado = models.CharField(max_length=20)
     profesional = models.CharField(max_length=50)
     fecha = models.DateField()
-

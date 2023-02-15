@@ -10,7 +10,17 @@ Profesionales
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Formulario de profesionales</h1>                    
+                <h1>Registro de profesionales</h1>     
+                <h2></h2>         
+                <form action="{% url 'profesionales' %}" method="POST">
+                    {% csrf_token %}
+                <table>
+                    {{ formulario_profesionales.as_table }}
+                </table>   
+
+                <input type="submit" value="Enviar">
+
+                </form> 
                 
             </div>
         </div>

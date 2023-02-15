@@ -1,29 +1,28 @@
 {% extends "AppEntrega/padre.html" %}
 
 {% block titulo %}
-Pacientes
+Prueba
 {% endblock %}
 
 {% block contenido %}
 
-<section class="features-icons bg-light text-center">
+<section class="features-icons bg-light">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Registro de pacientes</h1>   
-                <h2></h2>
-                <form action="{% url 'pacientes' %}" method="POST">
+                <h1>PRUEBA</h1>                    
+                <form action="{% url pacientes %}" method="POST">
                     {% csrf_token %}
+
                     <p>Nombre: <input type="text" name="nombre"></p>
                     <p>Apellido: <input type="text" name="apellido"></p>
                     <p>Mail: <input type="email" name="mail"></p>
-                    <p>DNI: <input type="number" name="DNI"></p>
+                    <p>DNI: <input type="num" name="DNI"></p>
                     <p>Fecha de nacimiento: <input type="date" name="fecha_nac"></p>
                     <p>Sexo: <input type="text" name="sexo"></p>
 
-                    <p><input type="submit" value="Enviar"></p>
-                </form>                 
-                
+                    <input type="submit" value="Enviar">
+                </form>
             </div>
         </div>
     </div>
