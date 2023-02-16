@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -67,3 +68,17 @@ def test_covid(request):
     else:
         mi_formulario = TesteosFormulario()
     return render (request, 'AppEntrega/test_covid.html', {'formulario_testeos': mi_formulario})
+
+def resultado_test(request):
+    return render(request, 'AppEntrega/resultado_test.html')
+
+def buscar(request):
+    if request.GET['DNI_pac']:
+        paciente = request.GET['DNI_pac']
+        resultado = TestCovid.objects.filter(DNI_pac__icontains = paciente)
+        return render(request, 'AppEntrega/resultado-busqueda.html', {'paciente': paciente, 'resultado': resultado})
+
+    else:
+        respuesta = 'No se encontró ese paciente.'
+
+    return HttpResponse(respuesta)
