@@ -1,4 +1,4 @@
-# Tercera-pre-entrega---Augusto-Lopez-Brenot
+# Tercera pre-entrega - Augusto Lopez Brenot
 
 # Instrucciones para clonar el repositorio y setear el proyecto 💻
 
