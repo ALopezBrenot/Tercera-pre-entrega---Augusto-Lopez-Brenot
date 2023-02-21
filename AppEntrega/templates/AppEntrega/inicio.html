@@ -10,8 +10,15 @@ Inicio
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Bienvenido a mi sitio!</h1>                    
+                <h1>Bienvenido a nuestro sitio!</h1> 
                 
+                <h2>Aquí podrás buscar a nuestros profesionales por su matrícula para contactarlos </h2>                   
+                <form action="{% url 'buscar' %}" method="GET">
+                    {% csrf_token %}
+                    <input type="number" name="matricula" id="matricula">
+                    <input type="submit" value="Buscar">
+                </form>
+
             </div>
         </div>
     </div>

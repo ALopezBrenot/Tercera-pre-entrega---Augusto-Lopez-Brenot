@@ -69,16 +69,17 @@ def test_covid(request):
         mi_formulario = TesteosFormulario()
     return render (request, 'AppEntrega/test_covid.html', {'formulario_testeos': mi_formulario})
 
-def resultado_test(request):
-    return render(request, 'AppEntrega/resultado_test.html')
+def busqueda_profesional(request):
+    return render(request, 'AppEntrega/busqueda-profesional.html')
 
 def buscar(request):
-    if request.GET['DNI_pac']:
-        paciente = request.GET['DNI_pac']
-        resultado = TestCovid.objects.filter(DNI_pac__icontains = paciente)
-        return render(request, 'AppEntrega/resultado-busqueda.html', {'paciente': paciente, 'resultado': resultado})
+    if request.GET['matricula']:
+        b_matricula = request.GET['matricula']
+        resultado = Profesional.objects.filter(matricula__icontains=b_matricula)
 
+        return render(request, 'AppEntrega/busqueda-profesional.html', {'matricula': b_matricula, 'mail': resultado})
+    
     else:
-        respuesta = 'No se encontró ese paciente.'
-
-    return HttpResponse(respuesta)
+        respuesta = 'No se ha encontrado ese profesional.'
+    
+    return HttpResponse (respuesta)
