@@ -12,17 +12,23 @@ Resultados de consulta
             <div class="col-lg-12">
                 <h1>Resultado de la consulta</h1> 
                 
-                <p>Estas buscando al profesional {{matricula}}</p>
+                <p>Estos son los resultados de la búsqueda: </p>
 
                 {% if mail %}
 
                 <ul>
                     {% for x in mail %}
-                    <li> Matrícula profesional: {{ x.matricula }} / Correo electrónico: {{ x.mail }} </li>
+                    <li>Matrícula profesional: {{ x.matricula }} </li>
+                    <li>Correo electrónico: {{ x.mail }} </li>
                     {% endfor %}
                 </ul>
 
+                {% else %}
+                <p>No hay profesionales con esa matrícula. </p>
+
                 {% endif %}
+
+                <p style="color: red;"> {{respuesta}} </p>
             </div>
         </div>
     </div>

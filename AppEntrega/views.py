@@ -82,4 +82,4 @@ def buscar(request):
     else:
         respuesta = 'No se ha encontrado ese profesional.'
     
-    return HttpResponse (respuesta)
+    return render(request, 'AppEntrega/busqueda-profesional.html', {'respuesta': respuesta})
